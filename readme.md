@@ -758,7 +758,7 @@ export default combineReducers({
 })
 ```
 
-Criar o arquivo app/src/components/Home.js com o seguinte conteúdo:
+Criar o arquivo app/src/containers/Home.js com o seguinte conteúdo:
 
 ```javascript
 import React, { Component } from 'react'
