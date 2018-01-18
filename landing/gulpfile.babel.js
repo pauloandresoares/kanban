@@ -92,6 +92,8 @@ gulp.task('build', ['b-html', 'b-css', 'b-js', 'b-img'], () => {
 	return igniteServer()
 })
 
+
+
 const ENV = process.env.SERVER_ENV || 'development'
 
 if (ENV === 'development') {

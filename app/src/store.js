@@ -4,13 +4,14 @@ import createHistory from 'history/createBrowserHistory'
 import reducers from './reducers'
 
 const history = createHistory()
-const middlewares = routerMiddleware()
+const middlewares = routerMiddleware(history)
 
-const configStore = () => {
-    return createStore(
-        reducers,
-        applyMiddleware(middlewares)
-    )
+const configStore = (initalState) => {
+	return createStore(
+		reducers,
+		initalState,
+		applyMiddleware(middlewares)
+	)
 }
 
-export default { configStore, history } 
+export default { configStore, history }

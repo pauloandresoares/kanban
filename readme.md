@@ -683,6 +683,15 @@ npm install react-redux redux prop-types react-dnd react-dnd-html5-backend --sav
 
 **5 - Configuração da arquitetura**
 
+Abrir o arquivo app/public/index.html e adicionar o seguinte conteudo 
+
+```html
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,500,600' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">    
+```
+
 Entrar no diretório app/src/ e excluir os arquivos: App.scss, App.js e App.test.js
 
 Executar o comando no diretório /app para instalar o react router redux
@@ -754,13 +763,26 @@ Criar o arquivo app/src/components/Home.js com o seguinte conteúdo:
 ```javascript
 import React, { Component } from 'react'
 
+//Importa o componete de painel
+import Panel from './../components/Panel'
+
+//Importa o componente de card
+import Card from './../components/Card'
+
+//Importa o arquivos sass da home
+import './Home.scss'
+
 class Home extends Component {
 	constructor(props) {
 		super(props)
 	}
     render() {
         return (
-            <h1>Kanban Board</h1>
+			<div>
+                <Panel>
+
+                </Panel>
+            </div>
         )
     }
 
@@ -769,3 +791,16 @@ class Home extends Component {
 export default Home
 ```
 
+**6 - Instalar o UUID para gerar dados dinamios e o localforage**
+
+Instalar o UUID 
+
+```sh
+npm install uuid --save 
+```
+
+Instalar o localforage 
+```sh
+npm install localforage --save
+
+```
